@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | PhoenixRizze</title>
+    <style>
+        /* CSS Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            height: 50px;
+            border-top: 2px solid var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding: 8px 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9em;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .cta {
+            background-color: var(--secondary-color);
+            color: white !important;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        #languageSwitcher {
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Background Image 1.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+        
+        .services-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .service-box {
+            display: flex;
+            gap: 30px;
+            margin: 50px 0;
+            background-color: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-box img {
+            width: 40%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            width: 60%;
+        }
+        
+        .service-title {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        .conclusion-text {
+            text-align: center;
+            margin: 60px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 5%;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .comment-form {
+            margin-top: 20px;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .comment-form button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .service-box {
+                flex-direction: column;
+            }
+            
+            .service-box img,
+            .service-content {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="images/LOGO PH.png" alt="Phoenix Rizze Logo"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="why.html">Why MySim?</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <select id="languageSwitcher">
+                        <option value="en" selected>English</option>
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="zh">简体中文</option>
+                    </select>
+                </li>
+                <li><a href="#">Login</a></li>
+                <li><a class="cta" href="#">🔵 Start Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Our Services in Feasibility Study, Simulation, and Automated Report Generation</h1>
+        </section>
+        
+        <section class="content-section">
+            <p class="services-intro">We offer the following services:</p>
+            
+            <!-- Market Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Market Feasibility Study-1.jpeg" alt="Market Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Market Feasibility Study</h2>
+                    <p>Our Market Feasibility Study delivers a comprehensive analysis of your target market, including demand size, competitive landscape, and marketing opportunities. This study helps you understand customer needs and craft effective marketing strategies to ensure your project's success and competitive advantage.</p>
+                </div>
+            </div>
+            
+            <!-- Technical Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Technical Feasibility Study-1.jpeg" alt="Technical Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Technical Feasibility Study</h2>
+                    <p>The Technical Feasibility Study evaluates all technical aspects of your project, such as technology selection, required equipment, optimal location, and production processes. It ensures your project is technically viable and capable of delivering the desired quality and efficiency.</p>
+                </div>
+            </div>
+            
+            <!-- Financial Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Financial Feasibility Study-4.jpeg" alt="Financial Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Financial Feasibility Study</h2>
+                    <p>Our Financial Feasibility Study estimates investment and operational costs, projects revenues, and analyses profitability and return on investment. This study equips investors with precise financial insights to make informed and confident decisions.</p>
+                </div>
+            </div>
+            
+            <!-- Legal Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Legal Feasibility Study-3.jpeg" alt="Legal Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Legal Feasibility Study</h2>
+                    <p>The Legal Feasibility Study reviews applicable laws, regulations, required permits, and compliance obligations. It guarantees that your project aligns with all legal frameworks, minimising risks and ensuring smooth operational continuity.</p>
+                </div>
+            </div>
+            
+            <!-- Environmental Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Environmental Feasibility Study-2.jpeg" alt="Environmental Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Environmental Feasibility Study</h2>
+                    <p>This study assesses the environmental impact of your project, including resource consumption, emissions, and waste management. It also identifies sustainability requirements, helping you balance development goals with environmental responsibility.</p>
+                </div>
+            </div>
+            
+            <!-- Social Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Social Feasibility Study-3.jpeg" alt="Social Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Social Feasibility Study</h2>
+                    <p>Our Social Feasibility Study analyses the project's effects on the local community, including job creation and social development. It supports community acceptance and ensures your project delivers lasting social benefits.</p>
+                </div>
+            </div>
+            
+            <!-- Economic Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Economic Feasibility Study-2.jpeg" alt="Economic Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Economic Feasibility Study</h2>
+                    <p>This study evaluates the economic benefits of your project at the local and national levels, such as GDP contribution and infrastructure enhancement. It measures your project's role in broader economic growth and development.</p>
+                </div>
+            </div>
+            
+            <!-- Organisational Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Organizational Feasibility Study-1.jpeg" alt="Organisational Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Organisational Feasibility Study</h2>
+                    <p>We assess the administrative structure and human resources necessary for your project's success. This includes evaluating skills, team organisation, and training plans to ensure effective management and goal achievement.</p>
+                </div>
+            </div>
+            
+            <!-- Schedule Feasibility Study -->
+            <div class="service-box">
+                <img src="images/Schedule Feasibility Study-2.jpeg" alt="Schedule Feasibility Study">
+                <div class="service-content">
+                    <h2 class="service-title">Schedule Feasibility Study</h2>
+                    <p>Our Schedule Feasibility Study estimates the timeframes required for project implementation and phases, ensuring alignment with your objectives. It enables precise planning and timely project delivery.</p>
+                </div>
+            </div>
+            
+            <!-- Detailed Market Study -->
+            <div class="service-box">
+                <img src="images/Detailed Market Study-4.jpeg" alt="Detailed Market Study">
+                <div class="service-content">
+                    <h2 class="service-title">Detailed Market Study</h2>
+                    <p>This in-depth market study explores your target customers' behaviours, preferences, and needs, alongside a thorough competitor analysis. It helps you identify market gaps and develop precise, effective marketing strategies.</p>
+                </div>
+            </div>
+            
+            <div class="conclusion-text">
+                <p>Empower your business decisions with our comprehensive feasibility study simulations and automated reporting tools. Whether you are launching a new project or expanding existing operations, our services provide the clarity and insights you need to minimise risks and maximise success. Start your journey toward informed, data-driven investment decisions today.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Why MySim?</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: <a href="mailto:phx@phoenixrizze.com">phx@phoenixrizze.com</a></li>
+                    <li>Phone: 000 000 0000</li>
+                    <li>Address: Business District, City, Country</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Leave a Comment</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Your message..."></textarea>
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Phoenix Rizze. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Language switcher functionality
+        document.getElementById('languageSwitcher').addEventListener('change', function() {
+            // This would be replaced with actual language switching logic
+            alert('Language changed to: ' + this.value);
+            // In a real implementation, you would:
+            // 1. Load translations for the selected language
+            // 2. Update all text content on the page
+            // 3. Possibly change text direction for RTL languages like Arabic
+        });
+    </script>
+</body>
+</html>
